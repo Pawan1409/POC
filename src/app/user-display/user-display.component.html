@@ -1,0 +1,22 @@
+<button type="button" (click)="addUser()">Add User</button>
+<table border="1">
+  <thead>
+    <th>S.No</th>
+    <th>Username</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </thead>
+  <tr *ngFor="let u of user; index as i ">
+    <td>{{i+1}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.first_name}}</td>
+    <td>{{u.last_name}}</td>
+    <td>{{u.email}}</td>
+    <td>
+      <button type="button" (click)="editUser(u.id)">Edit</button>
+      <button type="button" (click)="deleteUser(u.id)">Delete</button>
+    </td>    
+  </tr>
+</table>
